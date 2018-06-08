@@ -19,3 +19,5 @@ Note that when unaccepting the EULA, you will need to reaccept it the next time 
 ## Usage
 
 Download the CIA/3DSX from the releases page and open it with FBI. Press A to change your EULA. After that you can remove the application.
+
+If for whatever reason you need to reset the EULA to its initial values, rerun the application again.

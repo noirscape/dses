@@ -33,7 +33,7 @@ int main()
     consoleInit(GFX_TOP, &topScreen);
     consoleSelect(&topScreen);
 
-    printf("Dead Simple EULA Set - v0.1\n\n");
+    printf("Dead Simple EULA Set - v0.2\n\n");
 
     // read magic
     res = CFGU_GetConfigInfoBlk2(4, 0xD0000, eulaData);
@@ -44,22 +44,13 @@ int main()
     }
 
     if(!done)
-    {
-        if (eulaData[0] == 0xFF || eulaData[1] == 0xFF)
-        {
-            printf("Press A to unset the 3DS EULAs.\n\n");
-        }
-        else
-        {
-            printf("Press A to set the 3DS EULAs.\n\n");
-        }
-    }
+        printf(eulaData[0] == 0xFF || eulaData[1] == 0xFF ? "Press A to unset the 3DS EULAs.\n\n" : "Press A to set the 3DS EULAs.\n\n");
 
     while(aptMainLoop())
     {
         hidScanInput();
         u32 kDown = hidKeysDown();
-        if (kDown & KEY_A || !(done))
+        if (kDown & KEY_A && !done)
         {
             if (eulaData[0] == 0xFF || eulaData[1] == 0xFF) // FFFF == EULAs have been set, so unset them.
                 eulaData[0] = eulaData[1] = 0x00;
@@ -67,9 +58,10 @@ int main()
                 eulaData[0] = eulaData[1] = 0xFF;
             res = CFG_SetConfigInfoBlk8(4, 0xD0000, eulaData);
             if(R_FAILED(res))
-                printf("Something went wrong...\n\nPress START to exit.\n");
+                printf("Something went wrong...\n\n");
             else
-                printf("(Un)setting the EULA succeeded.\n\nPress START to exit.\n");
+                printf(eulaData[0] == 0xFF ? "Setting the EULA succeeded.\n\n" : "Unsetting the EULA succeeded.\n\n");
+            printf("Press START to exit.\n");
             done = true;
         }
         if (kDown & KEY_START)

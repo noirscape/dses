@@ -20,7 +20,6 @@ OUTDIR              :=	out
 BUILD               :=	build
 SOURCES             :=	source
 INCLUDES            :=	include
-ROMFS               :=	romfs
 
 
 # Path to the files

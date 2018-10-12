@@ -12,7 +12,7 @@ include $(DEVKITARM)/3ds_rules
 # Your values.
 APP_TITLE           :=	DSES
 APP_DESCRIPTION     :=	Dead Simple Eula Set
-APP_AUTHOR          :=	ev1l0rd
+APP_AUTHOR          :=	noirscape
 
 
 TARGET              :=	$(subst $e ,_,$(notdir $(APP_TITLE)))

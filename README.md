@@ -18,6 +18,8 @@ Note that when unaccepting the EULA, you will need to reaccept it the next time 
 
 ## Usage
 
-Download the CIA/3DSX from the releases page and open it with FBI. Press A to change your EULA. After that you can remove the application.
+Download the CIA from the releases page and open it with FBI. Press A to change your EULA. Press SELECT to remove the program after running it.
 
 If for whatever reason you need to reset the EULA to its initial values, rerun the application again.
+
+There is also a 3DSX option available for those who prefer 3DSX homebrew. Put it on your SD card and run it with the Homebrew Launcher or with 3dslink. Press SELECT to remove the program after running it.

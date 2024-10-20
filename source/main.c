@@ -96,6 +96,10 @@ int main(int argc, char* argv[])
             svcSleepThread(SLEEPTIME);
             break;
         }
+
+        gfxFlushBuffers();
+        gfxSwapBuffers();
+        gspWaitForVBlank();
     }
 
     aptExit();

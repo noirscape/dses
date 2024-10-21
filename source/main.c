@@ -1,5 +1,5 @@
 // DSES - Dead Simple EULA Set
-// Copyright (C) 2018 Valentijn "noirscape" V.
+// Copyright (C) 2024 "noirscape"
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
     consoleInit(GFX_TOP, &topScreen);
     consoleSelect(&topScreen);
 
-    printf("Dead Simple EULA Set - v1.1.0\n\n");
+    printf("Dead Simple EULA Set - v1.2.0\n\n");
 
     // read magic
     res = CFGU_GetConfigInfoBlk2(4, 0xD0000, eulaData);
